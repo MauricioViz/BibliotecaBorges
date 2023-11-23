@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ProyectoFinal2023.Models.TbLibro>
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SSIndex.css" />
+    <link rel="stylesheet" href="~/css/SSItems.css" />
+</head>
+<body>
+
+    <div class="barra">
+        <div>
+            <a href="/Usuario/Index" class="logo">B. BORGES </a>
+        </div>
+
+        <div class="searchbar-pos">
+            <form action="">
+                <input type="text" placeholder="Buscar..." name="busqueda" />
+            </form>
+        </div>
+        <div class="navbar">
+
+            <div class="opciones asd">Ingresar
+            <div class="subnav-content">
+                <a class="estiloa1" href="/Usuario/Login">Iniciar Sesión</a>
+                <br />
+                <br />
+                <a class="estiloa1" href="/Usuario/Register">Registrarse</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header-content container">
+            <h1>Biblioteca BORGES</h1>
+
+            <h3>Reserva de Libros en línea</h3>
+
+        </div>
+    </header>
+
+    
+    <section class="page">
+        <a href="/Usuario/Index">        
+            <img class="btnRetroceder" src="~/css/images/flechita.png" alt="back"/>                    
+        </a>
+
+        <div class="page-content container">
+            <table class="tabla-libros">
+            
+                
+                @{
+                    int i = 0;
+                    @foreach (var libro in Model)
+            {
+                if (i % 4 == 0)
+                {
+                    @:</tr><tr>
+                }
+                
+                <td>
+                <a asp-action="InfoLibro" asp-route-idLibro="@libro.IdLibro.Trim()"> 
+                    <div class="book-info card">
+                    <div class="espLibro"> <h3> L </h3></div>
+                        <p>@libro.TituloLibro <br> @libro.GeneroLibro</p>
+
+                        
+                    </div>
+                  </a>  
+                </td>
+                
+                i++;
+            }
+            
+            }
+            </tr>
+            
+            
+            
+        </table>
+            
+        </div>
+
+    </section>
+    
+</body>
+</html>

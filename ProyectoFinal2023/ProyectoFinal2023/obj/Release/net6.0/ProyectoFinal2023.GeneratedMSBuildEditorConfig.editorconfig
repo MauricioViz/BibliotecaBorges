@@ -1,0 +1,165 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ProyectoFinal2023
+build_property.RootNamespace = ProyectoFinal2023
+build_property.ProjectDir = C:\Users\Mauricio\Desktop\ProyectoFinal2023\ProyectoFinal2023\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Mauricio\Desktop\ProyectoFinal2023\ProyectoFinal2023
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Autor/AutorTabla.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JcQXV0b3JUYWJsYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Autor/AutorTablaLibro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JcQXV0b3JUYWJsYUxpYnJvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Cliente/ControlClientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDb250cm9sQ2xpZW50ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Editorial/EditorialTabla.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdG9yaWFsXEVkaXRvcmlhbFRhYmxhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Editorial/EditorialTablaLibro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdG9yaWFsXEVkaXRvcmlhbFRhYmxhTGlicm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Libro/Catalogo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cQ2F0YWxvZ28uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Libro/CatalogoLogCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cQ2F0YWxvZ29Mb2dDbGllbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Libro/InfoLibro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cSW5mb0xpYnJvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Libro/InfoLibroLogCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cSW5mb0xpYnJvTG9nQ2xpZW50ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Libro/LibroAnadir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cTGlicm9BbmFkaXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Libro/LibroTabla.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cTGlicm9UYWJsYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Libro/LibroTablaAutores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cTGlicm9UYWJsYUF1dG9yZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Libro/LibroTablaEditoriales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cTGlicm9UYWJsYUVkaXRvcmlhbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Prestamo/ControlActivos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cQ29udHJvbEFjdGl2b3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Prestamo/ControlEntregas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cQ29udHJvbEVudHJlZ2FzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Prestamo/ControlPrestamos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cQ29udHJvbFByZXN0YW1vcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Prestamo/ControlSolicitudes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cQ29udHJvbFNvbGljaXR1ZGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Prestamo/IndexReserva.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cSW5kZXhSZXNlcnZhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Prestamo/listLibros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cbGlzdExpYnJvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Prestamo/screenLibroEncontrado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cc2NyZWVuTGlicm9FbmNvbnRyYWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Prestamo/tablaPrestamosUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cdGFibGFQcmVzdGFtb3NVc3VhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Prestamo/UsuarioLibrosDelPrestamo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cVXN1YXJpb0xpYnJvc0RlbFByZXN0YW1vLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Usuario/ConfirmarRegistro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDb25maXJtYXJSZWdpc3Ryby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Usuario/CuentaUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDdWVudGFVc3VhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Usuario/EditarUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xFZGl0YXJVc3VhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Usuario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Usuario/IndexLogCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleExvZ0NsaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Usuario/IndexLogEmpleado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleExvZ0VtcGxlYWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Usuario/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Usuario/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mauricio/Desktop/ProyectoFinal2023/ProyectoFinal2023/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-jtv3mranmg

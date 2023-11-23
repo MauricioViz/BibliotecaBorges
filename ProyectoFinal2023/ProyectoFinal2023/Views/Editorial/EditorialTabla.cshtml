@@ -1,0 +1,122 @@
+﻿@model ProyectoFinal2023.Models.TbEditorial;
+
+@{
+    var usuario = ViewBag.ElUsuario as ProyectoFinal2023.Models.TbUsuario;
+
+}
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SSIndex.css" />
+    <link rel="stylesheet" href="~/css/SSItems.css" />
+    <link rel="stylesheet" href="~/css/SSTablas.css" />
+
+</head>
+<body>
+
+    <div class="barra">
+        <div>
+            <a href="/Usuario/Index" class="logo">B. BORGES </a>
+        </div>
+
+        <div class="searchbar-pos">
+            <form action="">
+                <input type="text" placeholder="Buscar..." name="busqueda" />
+            </form>
+        </div>
+        <div class="navbar">
+
+            <div class="opciones asd">
+                Mi cuenta
+                <div class="subnav-content">
+
+                    <a class="estiloa1" href="/Usuario/CerrarSesion">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header-content container">
+            <span class="mtext">  <h3> Bienvenido empleado/a @usuario.NomUsuario ! </h3></span>
+            <h1>Biblioteca BORGES</h1>
+
+            <h3>Reserva de Libros en línea</h3>
+
+        </div>
+    </header>
+
+
+    <section class="page">
+        <a href="/Usuario/IndexLogEmpleado">
+            <img class="btnRetroceder" src="~/css/images/flechita.png" alt="back" />
+        </a>
+
+        <div class="page-content container">
+            <table class="tabla-libros">
+
+                <div>
+                    <h3 class="fuenteInfoTitulo"> Añadir Editorial </h3>
+                    <br />
+                    <form action="/Editorial/EditorialAnadir" method="post">
+                        <table class="tableagregar">
+                            <thead class="theadagregar">
+                                <tr>
+                                    <td class="estiloa2" scope="col"> Nombre de la editorial: </td>
+                                    <td class="estiloa2" scope="col"> Direccion: </td>
+                                    <td class="estiloa2" scope="col"> Numero de telefono: </td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td> <input asp-for="NomEditorial" type="text" id="titulo" placeholder="Texto." />  </td>
+                                <td> <input asp-for="DirEditorial" type="text" id="titulo" placeholder="Texto." />  </td>
+                                <td> <input asp-for="TlfEditorial" type="text" id="titulo" placeholder="Numero." /> </td>
+                            </tr>
+                            <br />
+                            <br />
+                            <tr>
+                                <td></td>
+                                <td> <button type="submit" class="btn-1 centerbtn">Añadir</button></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <br /><br />
+
+                </div>
+                <br />
+                <br />
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <td scope="col">ID</td>
+                            <td scope="col">Nombre de la editorial</td>
+                            <td scope="col">Direccion</td>
+                            <td scope="col">Numero de telefono</td>
+                            <td scope="col"></td>
+                            <td scope="col"></td>
+                            <td scope="col"></td>
+                        </tr>
+                    </thead>
+                    @foreach (var editorial in ViewBag.Editoriales)
+                    {
+                        <tr>
+                            <td>@editorial.IdEditorial</td>
+                            <td>@editorial.NomEditorial</td>
+                            <td>@editorial.DirEditorial</td>
+                            <td>@editorial.TlfEditorial</td>
+                            <td><a asp-action="EditorialTablaLibro" asp-route-idEditorial="@editorial.IdEditorial.Trim()" class="estiloa1">Ver libros</a></td>
+                            <td><a class="estiloa1" href="#">Editar</a></td>
+                            <td><a asp-action="eliminarEditorial" asp-route-idEditorial="@editorial.IdEditorial.Trim()" class="estiloa1">Eliminar</a></td>
+                        </tr>
+                    }
+                </table>
+
+
+            </table>
+
+        </div>
+
+    </section>
+    </body>
+    </html>
+

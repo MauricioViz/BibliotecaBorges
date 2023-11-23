@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ProyectoFinal2023.Models.TbUsuario
+
+<html>
+    <head>
+        <link rel="stylesheet" href="~/css/SSLogin.css" />
+    </head>
+    <body>
+
+        <header class="headerLog">
+        <div class="whiteboxLog">
+            <form action="/Usuario/Validar" method="post">
+            <h2> Iniciar Sesión </h2>
+            <div class="form-group">
+            <label for="correoelectronico">Correo electrónico: </label><br />
+            <input asp-for="CorreoUsuario" type="text" id="correo" />
+            </div>
+            <br /> <br />
+            <div class="form-group">
+            <label for="contraseña">Contraseña: </label><br />
+            <input asp-for="PassUsuario" type="password" id="pass" />
+            </div>
+            <br /> <br /> <br />
+            <div class="form-group boton">
+                
+                <button type="submit" class="btn btn-primary" value="btn" name="btnlogin" >Entrar</button><br />
+                <span class="mtext">Si no tienes cuenta, <a href="/Usuario/Register">Registrate</a></span>
+            </div>
+            </form>
+            
+        </div>
+
+        </header>
+        
+    </body>
+    
+</html>

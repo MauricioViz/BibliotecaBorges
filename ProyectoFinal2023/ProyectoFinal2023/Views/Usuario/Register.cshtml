@@ -1,0 +1,47 @@
+﻿@model ProyectoFinal2023.Models.TbUsuario
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SSLogin.css" />
+</head>
+<body>
+    <header class="headerLog">
+        <div class="whiteboxLog">
+            <h2> Registro </h2>
+            <form class="form-signin" action="/Usuario/ValidarRegistro" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre y apellido: </label><br />
+                <input asp-for="NomUsuario" type="text" id="nomApe"  />
+            </div>
+            <br />
+                <div class="form-group">
+                    <label for="telefono">N. Teléfono: </label><br />
+                    <input asp-for="TlfUsuario" type="text" id="numtelf"  />
+                </div>
+                <br />
+                <div class="form-group">
+                <label for="correoelectronico">Correo electrónico: </label><br />
+                <input asp-for="CorreoUsuario" type="text" id="correo"  />
+            </div>
+                           
+                <br /> 
+            <div class="form-group">
+                <label for="contraseña">Contraseña: </label><br />
+                <input asp-for="PassUsuario" type="password" id="pass" />
+            </div>
+                <br /> <br />
+                
+            <div class="form-group boton">
+                    
+                    <button type="submit" class="btn btn-primary" value="btn" name="btnlogin" method="post" >Entrar</button><br />
+                <span class="mtext">Si ya tienes cuenta, <a href="/Usuario/Login">Inicia sesión</a></span>
+            </div>
+            </form>
+
+        </div>
+
+    </header>
+
+</body>
+
+</html>

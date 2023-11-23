@@ -1,0 +1,114 @@
+﻿@{
+    var usuario = ViewBag.ElUsuario as ProyectoFinal2023.Models.TbUsuario; // Ajusta al espacio de nombres y tipo real
+}
+@model ProyectoFinal2023.Models.TbUsuario
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SSIndex.css" />
+    <link rel="stylesheet" href="~/css/SSItems.css" />
+</head>
+<body>
+    <!--
+    <div class="barra">
+        <div>
+            <a href="#" class="logo">B. BORGES </a>
+        </div>
+
+        <div class="searchbar-pos">
+            <form action="">
+                <input type="text" placeholder="Buscar..." name="busqueda" />
+            </form>
+        </div>
+        <div class="navbar">
+
+            <div>Reservas</div>
+            <div>Mi cuenta</div>
+
+        </div>
+    </div>
+    -->
+    <div class="barra">
+        <div>
+            <a href="/Usuario/Index" class="logo">B. BORGES </a>
+        </div>
+
+        <div class="searchbar-pos">
+            <form action="">
+                <input type="text" placeholder="Buscar..." name="busqueda" />
+            </form>
+        </div>
+        <div class="navbar">
+
+            <a class="estiloa2" href="/Prestamo/IndexReserva">
+                <div class="opciones">
+                    Reservas
+                </div>
+            </a>
+
+            <div class="opciones asd">
+                Mi cuenta
+                <div class="subnav-content">
+                    <a class="estiloa1" href="/Usuario/Login">Configuración </a>
+                    <br />
+                    <br />
+                    <a class="estiloa1" href="/Usuario/CerrarSesion">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header-content container">
+
+            <span class="mtext">  <h3> Bienvenido/a @usuario.NomUsuario ! </h3></span>
+            <h1>Biblioteca BORGES</h1>
+
+            <h3>Reserva de Libros en línea</h3>
+
+        </div>
+    </header>
+
+    <section class="page">
+        
+        <h3 class="fuenteInfoTitulo"> Información de la cuenta </h3>
+        
+        <div class="contenedor">
+        <br /> <br /> <br /> <br />
+        <table class="fuenteInfo">
+            <tr>
+                <td>Nombre:</td>
+                <td> @usuario.NomUsuario </td>
+            </tr>           
+            <tr>
+                <td>Número telefónico:</td>
+                <td> @usuario.TlfUsuario </td>
+            </tr>
+            <tr>
+                <td>Correo electrónico:</td>
+                <td> @usuario.CorreoUsuario  </td>
+            </tr>
+            
+        </table>
+        <div class="divider"> </div>
+        <table class="fuenteInfo">
+            <tr>
+                <td>Editar</td>
+                <form action="/Usuario/VerificarContraseña" method="post">
+                    <td><input asp-for="PassUsuario" type="password" id="passwordConfirm" placeholder="Confirmar contraseña" /> </td>
+                    <td><button type="submit" class="btn-1" value="btn"> Acceder </button> </td>
+                    </form>
+            </tr>
+            <tr>
+                <td>Eliminar cuenta</td>
+                <form action="/Usuario/eliminarCuenta" method="post">
+                    <td><input asp-for="PassUsuario" type="password" id="passwordConfirm" placeholder="Confirmar contraseña" /> </td>
+                    <td> <button type="submit" class="btn-1" value="btn2"> Eliminar cuenta </button></td>
+                </form>
+            </tr>
+        </table>
+        </div>
+
+    </section>
+</body>
+</html>

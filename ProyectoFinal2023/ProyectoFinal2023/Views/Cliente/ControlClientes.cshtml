@@ -1,0 +1,86 @@
+﻿@{
+    var usuario = ViewBag.ElUsuario as ProyectoFinal2023.Models.TbUsuario;
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SSIndex.css" />
+    <link rel="stylesheet" href="~/css/SSItems.css" />
+    <link rel="stylesheet" href="~/css/SSTablas.css" />
+</head>
+<body>
+
+    <div class="barra">
+        <div>
+            <a href="/Usuario/Index" class="logo">B. BORGES </a>
+        </div>
+
+        <div class="searchbar-pos">
+            <form action="">
+                <input type="text" placeholder="Buscar..." name="busqueda" />
+            </form>
+        </div>
+        <div class="navbar">
+
+            <div class="opciones asd">
+                Mi cuenta
+                <div class="subnav-content">
+
+                    <a class="estiloa1" href="/Usuario/CerrarSesion">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header-content container">
+            <span class="mtext">  <h3> Bienvenido empleado/a @usuario.NomUsuario ! </h3></span>
+            <h1>Biblioteca BORGES</h1>
+
+            <h3>Reserva de Libros en línea</h3>
+
+        </div>
+    </header>
+
+    <section class="page">
+        <a href="/Usuario/IndexLogEmpleado">
+            <img class="btnRetroceder" src="~/css/images/flechita.png" alt="back" />
+        </a>
+        <div class="page-content container">
+            <h3 class="fuenteInfoTitulo"> Todos los clientes registrados </h3>
+            <br />
+            <table class="tableCarro table-hover">
+
+
+                <thead>
+                    <tr>
+                        <td scope="col"> ID del usuario </td>
+                        <td scope="col"> Nombre del usuario </td>
+                        <td scope="col"> Prestamos </td>
+                        <td scope="col"> Teléfono del usuario </td>
+                        <td scope="col"> Correo del Usuario </td>
+                        <td scope="col">  </td>
+
+                    </tr>
+                </thead>
+                <!-- Aca ingresar todos los datos del ViewBag con todos los pedidos del usuario -->
+                @foreach (var cliente in ViewBag.AllClientes)
+                {
+                    <tr>
+                        <td>@cliente.IdUsuario</td>
+                        <td>@cliente.NomUsuario</td>
+                        <td> <a asp-action="tablaPrestamosUsuario" asp-controller="Prestamo" asp-route-idUsuario="@cliente.IdUsuario.Trim()" class="estiloa2"> Ver prestamos </a> </td>
+                        <td>@cliente.TlfUsuario</td>
+                        <td>@cliente.CorreoUsuario</td>
+                        <td> <a asp-action="eliminarCuentaFromPanel" asp-controller="Usuario" asp-route-idUsuario="@cliente.IdUsuario.Trim()" class="estiloa2"> Eliminar cuenta  </a></td>
+                    </tr>
+
+                }
+            </table>
+
+
+        </div>
+
+
+    </section>
+</body>
+</html>

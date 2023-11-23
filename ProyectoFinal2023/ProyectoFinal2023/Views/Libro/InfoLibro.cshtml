@@ -1,0 +1,100 @@
+﻿@model ProyectoFinal2023.Models.TbPrestamoLibro;
+@{
+    var autores = ViewBag.LosAutores as ProyectoFinal2023.Models.TbAutor; // Ajusta al espacio de nombres y tipo real
+}
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SSIndex.css" />
+    <link rel="stylesheet" href="~/css/SSItems.css" />
+</head>
+<body>
+
+    <div class="barra">
+        <div>
+            <a href="/Usuario/Index" class="logo">B. BORGES </a>
+        </div>
+
+        <div class="searchbar-pos">
+            <form action="">
+                <input type="text" placeholder="Buscar..." name="busqueda" />
+            </form>
+        </div>
+        <div class="navbar">
+
+            <div class="opciones asd">
+                Ingresar
+                <div class="subnav-content">
+                    <a class="estiloa1" href="/Usuario/Login">Iniciar Sesión</a>
+                    <br />
+                    <br />
+                    <a class="estiloa1" href="/Usuario/Register">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header-content container">
+            <h1>Biblioteca BORGES</h1>
+
+            <h3>Reserva de Libros en línea</h3>
+        </div>
+    </header>
+
+    <section class="page">
+        <a href="/Libro/Catalogo">
+            <img class="btnRetroceder" src="~/css/images/flechita.png" alt="back" />
+        </a>
+
+        <div class="espLibroPreview"> <h3> L </h3> </div>
+        <div class="tituloLibro"> <h3 class="estiloTitulo"> @ViewBag.ElLibro.TituloLibro </h3></div>
+        <br /> <br /> 
+        <div class="infoLibroQ"> <h3> Género del libro: </h3> </div>
+        <div class="infoLibroA"> <h3> @ViewBag.ElLibro.GeneroLibro </h3></div>
+        <br /> <br /> 
+        <div class="infoLibroQ"> <h3> Fecha de publicación: </h3> </div>
+        <div class="infoLibroA"> <h3> @ViewBag.ElLibro.FecPublic </h3> </div>
+        <br /> <br /> 
+        <div class="infoLibroQ"> <h3> Autor/Autores: </h3> </div>
+        <div class="infoLibroA">
+            @if (ViewBag.LosAutores == null)
+            {
+                <h3> No se encontraron autores </h3>
+            }
+            else
+            {
+                @foreach (var obj in @ViewBag.LosAutores)
+                {
+                    <h3> -@obj.NomAutor, </h3> 
+                }
+            }
+        </div>
+        <br /> <br />
+        <div class="infoLibroQ"> <h3> Editorial: </h3> </div>
+        <div class="infoLibroA"> 
+            @if (ViewBag.LasEditoriales == null)
+            {
+                <h3> No se encontraron editoriales </h3>
+            }
+            else
+            {
+                @foreach (var obj in ViewBag.LasEditoriales)
+                {
+                    <h3> -@obj.NomEditorial, </h3>
+                }
+            }
+        </div>
+        <br /> <br />
+        <form asp-controller="Prestamo" asp-action="Enlistar" method="post">
+            <div class="infoLibroQ"> <h3> Ordenar: </h3></div>
+            <div class="select-container">
+                <input type="hidden" asp-for="IdLibro" value="@ViewBag.ElLibro.IdLibro" />
+            <select class="select-box" asp-for="Cantidad" asp-items='@(new SelectList(ViewBag.Cantidades))'></select>
+            <button type="submit" class="btnAñadirCarro" value="btn"> Añadir al carro </button>
+            </div>
+            
+        </form>
+        <br /> <br />
+
+    </section>
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿@model ProyectoFinal2023.Models.TbUsuario;
+
+@{
+    var usuario = ViewBag.ElUsuario as ProyectoFinal2023.Models.TbUsuario; // Ajusta al espacio de nombres y tipo real
+}
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SSIndex.css" />
+    <link rel="stylesheet" href="~/css/SSItems.css" />
+</head>
+<body>
+    
+    <div class="barra">
+        <div>
+            <a href="/Usuario/Index" class="logo">B. BORGES </a>
+        </div>
+
+        <div class="searchbar-pos">
+            <form action="">
+                <input type="text" placeholder="Buscar..." name="busqueda" />
+            </form>
+        </div>
+        <div class="navbar">
+
+            <a class="estiloa2" href="/Prestamo/IndexReserva">
+                <div class="opciones">
+                    Reservas
+                </div>
+            </a>
+
+            <div class="opciones asd">
+                Mi cuenta
+                <div class="subnav-content">
+                    <a class="estiloa1" href="/Usuario/Login">Configuración </a>
+                    <br />
+                    <br />
+                    <a class="estiloa1" href="/Usuario/CerrarSesion">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header-content container">
+
+            <span class="mtext">  <h3> Bienvenido/a @usuario.NomUsuario ! </h3></span>
+            <h1>Biblioteca BORGES</h1>
+
+            <h3>Reserva de Libros en línea</h3>
+
+        </div>
+    </header>
+
+    <section class="page">
+        <a href="/Usuario/CuentaUsuario">
+            <img class="btnRetroceder" src="~/css/images/flechita.png" alt="back" />
+        </a>
+        
+        <h3 class="fuenteInfoTitulo"> Editar información de la cuenta </h3>
+        
+            <br /> <br /> <br /> <br />
+            <div class="contenedor">
+                
+                <table class="fuenteInfo">
+                    <tr>
+                        <td>Actual nombre:</td>
+                        <td> @usuario.NomUsuario </td>
+                    </tr>
+                    <tr>
+                        <td>Actual número telefónico:</td>
+                        <td> @usuario.TlfUsuario </td>
+                    </tr>
+                    <tr>
+                        <td>Actual correo electrónico:</td>
+                        <td> @usuario.CorreoUsuario  </td>
+                    </tr>
+
+                </table>
+                <div class="divider"> </div>
+                <form asp-controller="Usuario" asp-action="EditarFinalizado" method="post">
+                <table class="fuenteInfo">
+                    <tr>
+                        <td>Nuevo nombre: </td>
+                        <td><input asp-for="NomUsuario" placeholder="Nombre (Se puede repetir)" /> 
+                            <span asp-validation-for="NomUsuario" class="text-danger"></span> </td>
+                    </tr>
+                    <tr>
+                        <td>Nuevo número telefónico: </td>
+                        <td>
+                            <input asp-for="TlfUsuario" placeholder="Número (Se puede repetir)" />
+                            <span asp-validation-for="TlfUsuario" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nuevo correo electrónico: </td>
+                        <td>
+                            <input asp-for="CorreoUsuario" placeholder="Correo electrónico (Se puede repetir)" />
+                            <span asp-validation-for="CorreoUsuario" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nueva contraseña: </td>
+                        <td>
+                            <input asp-for="PassUsuario" type="password" placeholder="Contraseña (Se puede repetir)" />
+                            <span asp-validation-for="PassUsuario" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr> <td><button type="submit" class="btn-1" value="btn"> Editar </button></td> </tr>
+                </table>
+            </form>
+            </div>
+
+        
+
+
+    </section>
+</body>
+</html>

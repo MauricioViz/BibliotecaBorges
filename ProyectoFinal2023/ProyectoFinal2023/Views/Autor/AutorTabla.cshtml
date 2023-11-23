@@ -1,0 +1,125 @@
+﻿@model ProyectoFinal2023.Models.TbAutor;
+
+@{
+    var usuario = ViewBag.ElUsuario as ProyectoFinal2023.Models.TbUsuario;
+
+}
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SSIndex.css" />
+    <link rel="stylesheet" href="~/css/SSItems.css" />
+    <link rel="stylesheet" href="~/css/SSTablas.css" />
+</head>
+<body>
+
+    <div class="barra">
+        <div>
+            <a href="/Usuario/Index" class="logo">B. BORGES </a>
+        </div>
+
+        <div class="searchbar-pos">
+            <form action="">
+                <input type="text" placeholder="Buscar..." name="busqueda" />
+            </form>
+        </div>
+        <div class="navbar">
+
+            <div class="opciones asd">
+                Mi cuenta
+                <div class="subnav-content">
+
+                    <a class="estiloa1" href="/Usuario/CerrarSesion">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header-content container">
+            <span class="mtext">  <h3> Bienvenido empleado/a @usuario.NomUsuario ! </h3></span>
+            <h1>Biblioteca BORGES</h1>
+
+            <h3>Reserva de Libros en línea</h3>
+
+        </div>
+    </header>
+
+
+    <section class="page">
+        <a href="/Usuario/IndexLogEmpleado">
+            <img class="btnRetroceder" src="~/css/images/flechita.png" alt="back" />
+        </a>
+
+        <div class="page-content container">
+            <table class="tabla-libros">
+
+                <div>
+                    <h3 class="fuenteInfoTitulo"> Añadir autor </h3>
+                    <br />
+                    <form action="/Autor/AutorAnadir" method="post">
+                        <table class="tableagregar">
+                            <thead class="theadagregar">
+                                <tr>
+                                    <td class="estiloa2" scope="col"> Nombre del autor: </td>
+                                    <td class="estiloa2" scope="col"> Nacionalidad: </td>
+                                    <td class="estiloa2" scope="col"> Fecha de nacimiento: </td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td> <input asp-for="NomAutor" type="text" id="titulo" placeholder="Texto." />  </td>
+                                <td> <input asp-for="Nacionalidad" type="text" id="titulo" placeholder="Texto." />  </td>
+                                <td> <input asp-for="FechaNacimiento" type="text" id="titulo" placeholder="YYYY/MM/DD" /></td>
+                            </tr>
+                            <br />
+                            <br />
+                            <tr>
+                                <td></td>
+                                <td> <button type="submit" class="btn-1 centerbtn">Añadir</button></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <br /><br />
+
+                </div>
+                <br />
+                <br />
+
+                <table class="tableCarro table-hover">
+                    <thead>
+                        <tr>
+                            <td scope="col">ID</td>
+                            <td scope="col">Nombre del autor</td>
+                            <td scope="col">Nacionalidad</td>
+                            <td scope="col">Fecha de nacimiento</td>
+                            <td scope="col"></td>
+                            <td scope="col"></td>
+                            <td scope="col"></td>
+                            
+                        </tr>
+                    </thead>
+                    @foreach (var autor in ViewBag.Autores)
+                    {
+                        <tr>
+                            <td>@autor.IdAutor</td>
+                            <td>@autor.NomAutor</td>
+                            <td>@autor.Nacionalidad</td>
+                            <td>@autor.FechaNacimiento</td>
+                            <td><a asp-action="AutorTablaLibro" asp-route-idAutor="@autor.IdAutor.Trim()" class="estiloa1">Ver libros</a></td>                           
+                            <td><a class="estiloa1" href="#">Editar</a></td>
+                            <td><a asp-action="eliminarAutor" asp-route-idAutor="@autor.IdAutor.Trim()" class="estiloa1">Eliminar</a></td>
+                        </tr>
+                    }
+                </table>
+
+
+            </table>
+
+        </div>
+
+    </section>
+
+    </body>
+    </html>
+

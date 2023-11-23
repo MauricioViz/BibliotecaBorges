@@ -1,0 +1,56 @@
+﻿@model ProyectoFinal2023.Models.TbAutorLibro
+
+<html>
+  
+    <head>
+        <link rel="stylesheet" href="~/css/SSIndex.css" />
+        <link rel="stylesheet" href="~/css/SSItems.css" />
+    <link rel="stylesheet" href="~/css/SSTablas.css" />
+</head>
+    <a href="/Libro/LibroTabla">
+        <img class="btnRetroceder" src="~/css/images/flechita.png" alt="back" />
+    </a>
+    <body>
+    <h3 class="fuenteInfoTitulo"> Autores de la obra @ViewBag.ElLibro.TituloLibro </h3>
+    <br />
+    <br />
+    <h3 class="estiloa1">Añadir autor: </h3>
+    <form asp-controller="Libro" asp-action="AgregarAutorLibro" method="post">
+        <input type="hidden" asp-for="IdLibro" value="@ViewBag.ElLibro.IdLibro" />
+        <select asp-for="IdAutor" asp-items='@(new SelectList(ViewBag.ListaAutores,"IdAutor","NomAutor"))'></select>
+        <button type="submit" class="btn btn-primary"> Añadir </button>
+    </form>
+  
+    <br /><br /><br />
+
+    
+    <table class="tableCarro table-hover">
+        <thead>
+            <tr>
+                <td scope="col">ID</td>
+                <td scope="col">Nombre del autor</td>
+                <td scope="col">Nacionalidad</td>
+                <td scope="col">Fecha de nacimiento</td>
+                <td scope="col"></td>
+                
+            </tr>
+        </thead>
+        @foreach (var data in ViewBag.LosAutores)
+        {
+            <tr>
+                <td>@data.IdAutor</td>
+                <td>@data.NomAutor</td>
+                <td>@data.Nacionalidad</td>
+                <td>@data.FechaNacimiento</td>
+                <td>
+                <form asp-controller="Autor" asp-action="removeAutorDeLibro" method="post">               
+                    <input type="hidden" asp-for="IdLibro" value="@ViewBag.ElLibro.IdLibro.Trim()" />
+                    <input type="hidden" asp-for="IdAutor" value="@data.IdAutor.Trim()" />       
+                    <button type="submit" class="estiloa1">Eliminar</button>
+                </form>
+                </td>
+            </tr>
+        }
+    </table>
+    </body>
+</html>

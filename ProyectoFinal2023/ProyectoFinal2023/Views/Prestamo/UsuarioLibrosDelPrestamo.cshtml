@@ -1,0 +1,54 @@
+﻿@{
+    var usuario = ViewBag.ElUsuario as ProyectoFinal2023.Models.TbUsuario; // Ajusta al espacio de nombres y tipo real
+}
+
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SSIndex.css" />
+    <link rel="stylesheet" href="~/css/SSItems.css" />
+    <link rel="stylesheet" href="~/css/SSTablas.css" />
+</head>
+<body>
+   
+    <section class="page">
+        <a href="/Prestamo/IndexReserva">
+            <img class="btnRetroceder" src="~/css/images/flechita.png" alt="back" />
+        </a>
+        <div class="page-content container">
+            
+
+            <div>
+                <h3 class="leftTitle"> Carro de compras </h3>               
+            </div>
+            <div class="line"> </div>
+            <br />
+            <table class="tableCarro table-hover">
+                <thead>
+                    <tr>
+                        <td scope="col"> Título del libro</td>
+                        <td scope="col"> Género del libro</td>
+                        <td scope="col"> Cantidad solicitada</td>
+                        
+                    </tr>
+                </thead>
+                @foreach (var item in ViewBag.itemsCarrito)
+                {
+                    <tr>
+                        <td>@item.nomLibro</td>
+                        <td>@item.nomGenero</td>
+                        <td>@item.cantidadSolicitada</td>
+                        
+                    </tr>
+                }
+            </table>
+            <br />
+            <div class="line"> </div>
+            
+
+        </div>
+
+    </section>
+</body>
+</html>

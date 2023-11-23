@@ -1,0 +1,67 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+    overflow: hidden;
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Berlin Sans FB';
+}
+
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+div .form-group{
+
+}
+
+.text-danger {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important;
+}
+
+.headerLog {
+    background-image: linear-gradient( rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/loginregister.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.whiteboxLog {
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff;
+           
+}
+
+h2 {
+    text-align: center;
+}
+
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 25px;
+}
+
+button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;   
+}
+
+.boton {
+    display: grid;
+    justify-content: center;
+}
+
+.mtext {
+    
+    font-size: 15px;
+}
+
+

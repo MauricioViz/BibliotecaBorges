@@ -1,0 +1,93 @@
+﻿@{
+    var usuario = ViewBag.ElUsuario as ProyectoFinal2023.Models.TbUsuario;
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SSIndex.css" />
+    <link rel="stylesheet" href="~/css/SSItems.css" />
+    <link rel="stylesheet" href="~/css/SSTablas.css" />
+</head>
+<body>
+
+    <div class="barra">
+        <div>
+            <a href="/Usuario/Index" class="logo">B. BORGES </a>
+        </div>
+
+        <div class="searchbar-pos">
+            <form action="">
+                <input type="text" placeholder="Buscar..." name="busqueda" />
+            </form>
+        </div>
+        <div class="navbar">
+
+            <div class="opciones asd">
+                Mi cuenta
+                <div class="subnav-content">
+
+                    <a class="estiloa1" href="/Usuario/CerrarSesion">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header-content container">
+            <span class="mtext">  <h3> Bienvenido empleado/a @usuario.NomUsuario ! </h3></span>
+            <h1>Biblioteca BORGES</h1>
+
+            <h3>Reserva de Libros en línea</h3>
+
+        </div>
+    </header>
+
+    <section class="page">
+        <a href="/Usuario/IndexLogEmpleado">
+            <img class="btnRetroceder" src="~/css/images/flechita.png" alt="back" />
+        </a>
+        <div class="page-content container">
+            <h3 class="fuenteInfoTitulo"> Prestamos por confirmar entrega </h3>
+
+            <table class="tableCarro table-hover">
+
+                <br /> <br />
+                <thead>
+                    <tr>
+                        <td scope="col"> ID del pedido </td>
+                        <td scope="col"> ID del usuario </td>
+                        <td scope="col"> Libros </td>
+                        <td scope="col"> Fecha del prestamo</td>
+                        <td scope="col"> Fecha de la devolución</td>
+                        <td scope="col"> Multa </td>
+                        <td scope="col"> Estado del prestamo </td>
+                        <td scope="col"> </td>
+                        <td scope="col"> </td>
+                    </tr>
+                </thead>
+                <!-- Aca ingresar todos los datos del ViewBag con todos los pedidos del usuario -->
+                @foreach (var prestamo in ViewBag.AllPrestamos)
+                {
+                    @if (prestamo.EstPrestamo == "Aceptada")
+                    {
+                        <tr>
+                            <td>@prestamo.IdPrestamo</td>
+                            <td>@prestamo.IdUsuario</td>
+                            <td> <a asp-action="listLibros" asp-route-idPrestamo="@prestamo.IdPrestamo.Trim()" class="estiloa2"> Ver libros </a> </td>
+                            <td>@prestamo.FecPrestamo</td>
+                            <td>@prestamo.FecDevolucion</td>
+                            <td>@prestamo.MultaPrestamo</td>
+                            <td>@prestamo.EstPrestamo</td>
+                            <td><a asp-action="cancelarEntrega" asp-route-idPrestamo="@prestamo.IdPrestamo.Trim()" class="estiloa2"> Cancelar entrega (Multa aplicada) </a> </td>
+                            <td><a asp-action="confirmarEntrega" asp-route-idPrestamo="@prestamo.IdPrestamo.Trim()" class="estiloa2"> Confirmar prestamo </a> </td>
+                        </tr>
+                    }
+                }
+            </table>
+
+
+        </div>
+
+
+    </section>
+</body>
+</html>

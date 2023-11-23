@@ -1,0 +1,56 @@
+﻿.espacioFull {
+    width: 100%;
+}
+.leftTitle {
+    display: flex;
+    font-size: 40px;
+    font-weight: 500;
+    margin-left: 100px;
+    
+}
+.line {
+    color: lightgrey; 
+    width: 1400px;
+    height: 5px;
+    background-color: lightgrey;
+    margin: 0 70px;
+    justify-content: center;
+}
+.deleteAllOption {
+    display: flex;
+    font-size: 15px;
+    font-weight: 200;
+    margin-left: 45%;
+    color:lightslategrey;
+}
+th, td{
+    padding: 20px;
+}
+thead {
+    background-color: dimgray;
+    border-bottom: solid 5px #ff6a00;
+    color: white;
+}
+
+.tableCarro {
+    width: 100%;
+    border-collapse: collapse;
+}
+tr:hover td {
+    background-color: #a19c9c;
+    color: white;
+}
+tr:nth-child(even){
+    background-color: #ddd;
+}
+
+.theadagregar {
+    background-color: white;
+    border-bottom: solid 5px #ff6a00;
+    color: black;
+}
+
+.tableagregar {
+    width: 100%;
+    border-collapse: collapse;
+}

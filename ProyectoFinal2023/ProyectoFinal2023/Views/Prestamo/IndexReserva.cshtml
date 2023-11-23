@@ -1,0 +1,140 @@
+﻿@model ProyectoFinal2023.Models.TbPrestamoLibro;
+@{
+    var usuario = ViewBag.ElUsuario as ProyectoFinal2023.Models.TbUsuario; // Ajusta al espacio de nombres y tipo real
+}
+
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SSIndex.css" />
+    <link rel="stylesheet" href="~/css/SSItems.css" />
+    <link rel="stylesheet" href="~/css/SSTablas.css" />
+</head>
+<body>
+    <!--
+    <div class="barra">
+        <div>
+            <a href="#" class="logo">B. BORGES </a>
+        </div>
+
+        <div class="searchbar-pos">
+            <form action="">
+                <input type="text" placeholder="Buscar..." name="busqueda" />
+            </form>
+        </div>
+        <div class="navbar">
+
+            <div>Reservas</div>
+            <div>Mi cuenta</div>
+
+        </div>
+    </div>
+    -->
+    <div class="barra">
+        <div>
+            <a href="/Usuario/Index" class="logo">B. BORGES </a>
+        </div>
+
+        
+        <div class="navbar">
+
+            <a class="estiloa2" href="/Prestamo/IndexReserva">
+                <div class="opciones">
+                    Reservas
+                </div>
+            </a>
+
+            <div class="opciones asd">
+                Mi cuenta
+                <div class="subnav-content">
+                    <a class="estiloa1" href="/Usuario/CuentaUsuario">Configuración </a>
+                    <br />
+                    <br />
+                    <a class="estiloa1" href="/Usuario/CerrarSesion">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="page">
+
+        <div class="page-content container">
+            <div>
+            <h3 class="leftTitle"> Carro de compras </h3>
+            
+                <a asp-action="removeAllItemsLista" asp-route-idPrestamo="@ViewBag.idPrestamoListando" class="deleteAllOption" > Eliminar todo </a>
+            </div>
+            <div class="line"> </div>
+            <br />
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td scope="col"> Título del libro</td>
+                        <td scope="col"> Género del libro</td>
+                        <td scope="col"> Cantidad solicitada</td>
+                        <td scope="col"> </td>
+                    </tr>
+                </thead>
+                @foreach(var item in ViewBag.itemsCarrito)
+                {
+                    <tr>
+                        <td>@item.nomLibro</td>
+                        <td>@item.nomGenero</td>
+                        <td>@item.cantidadSolicitada</td>
+                        <td>
+                            <form asp-controller="Prestamo" asp-action="removerItemDeLista" method="post">
+                                <input type="hidden" asp-for="IdPrestamo" value="@ViewBag.idPrestamoListando" />
+                                <input type="hidden" asp-for="IdLibro" value="@item.idDelLibro" />
+                                <button type="submit" class="estiloa1"> Eliminar </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </table>
+            <br />
+            <div class="line"> </div> <br />
+            <div class="positionLeft"> 
+            <a asp-controller="Libro" asp-action="Catalogo" class="btn-1"> Catalogo </a>  
+            <a asp-controller="Prestamo" asp-action="enviarSolicitud" asp-route-idPrestamo="@ViewBag.idPrestamoListando" class="btn-1"> Enviar solicitud </a>
+            </div>
+            <br /><br /><br />
+            <h3 class="leftTitle"> Todos mis pedidos </h3>
+            <div class="line"> </div>
+            <br />
+            <table class="tableCarro tableCarro-hover">
+                <thead>
+                    <tr>
+                        <td scope="col"> ID del pedido </td>
+                        <td scope="col"> Libros </td>
+                        <td scope="col"> Fecha del prestamo</td>
+                        <td scope="col"> Fecha de la devolución</td>
+                        <td scope="col"> Multa </td>
+                        <td scope="col"> Estado del prestamo </td>
+                        <td scope="col"> </td>
+                    </tr>
+                </thead>
+                <!-- Aca ingresar todos los datos del ViewBag con todos los pedidos del usuario -->
+                @foreach(var prestamo in ViewBag.allPrestamosUser)
+                {                              
+                    <tr>
+                            <td>@prestamo.IdPrestamo</td>
+                            <td> <a asp-action="UsuarioLibrosDelPrestamo" asp-route-idPrestamo="@prestamo.IdPrestamo.Trim()" class="estiloa2"> Ver libros </a> </td>
+                            <td>@prestamo.FecPrestamo</td>
+                            <td>@prestamo.FecDevolucion</td>
+                            <td>@prestamo.MultaPrestamo</td>                       
+                            <td>@prestamo.EstPrestamo</td>
+                        @if (@prestamo.EstPrestamo == "En espera")
+                        {
+                            <td><a asp-action="cancelarSolicitud" asp-route-idPrestamo="@prestamo.IdPrestamo.Trim()" class="estiloa2"> Cancelar </a> </td>
+                        }
+                    </tr>                
+                }
+            </table>
+        
+        </div>
+
+    </section>
+</body>
+</html>
